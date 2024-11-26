@@ -43,5 +43,5 @@ test.describe("tests the Iframe in Playwright", () => {
    console.log("this is after each method ");
  });
 test.afterAll(async () => {
-    console.log("After All tests");
+    console.log("After All tests s");
 });
