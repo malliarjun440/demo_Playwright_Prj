@@ -18,7 +18,7 @@ test("Drag and functions in playwright", async ({page}) => {
    await expect(dropText).toStrictEqual("Success!");
 });
 
-test.only("Manual Drag and Drop functions in playwright", async ({page}) => {
+test("Manual Drag and Drop functions in playwright", async ({page}) => {
     await page.goto("https://commitquality.com/practice-drag-and-drop");
  
  //    await page.waitForTimeout(10000);

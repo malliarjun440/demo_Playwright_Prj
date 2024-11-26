@@ -12,7 +12,7 @@ test("Iframes in playwright", async ({page}) => {
 
    await iframe.getByTestId("filter-button").click();
 
-   await page.pause();
+   // await page.pause();
 
 });
 
