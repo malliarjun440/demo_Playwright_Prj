@@ -13,12 +13,22 @@ test("File Dowload in playwright", async ({page}) => {
 });
 
 test.only("File Upload in playwright", async ({page}) => {
-    await page.goto("https://commitquality.com/practice-file-upload");
+   //  await page.goto("https://commitquality.com/practice-file-upload");
     
-    await page.getByTestId("file-input").setInputFiles("DownloadFolder/dummy_file.txt");
-    await page.pause();
+   //  await page.getByTestId("file-input").setInputFiles("DownloadFolder/dummy_file.txt");
+   //  await page.pause();
     
-    await page.getByText("Submit").click();
+   //  await page.getByText("Submit").click();
 
-    await page.pause();
+    await page.goto('https://hokkung.netlify.app/');
+   //  await page.getByRole('link', { name: 'Medium' }).click();
+   await page.getByTitle("Medium Link").click();
+    const pagePromise = page.waitForEvent('popup');
+    const newTab = await pagePromise;
+    await newTab.waitForLoadState();
+    await expect(newTab).toHaveURL("https://medium.com/@hokkung");
+    await newTab.bringToFront();
+    await page.bringToFront();
+
+   //  await page.pause();
  });
